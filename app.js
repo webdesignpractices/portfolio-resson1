@@ -42,7 +42,8 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/index',(req,res)=>{
-  connection.query('select * from items',
+  connection.query('select * from items where user_id=?',
+    [req.session.userId],
     (error,results)=>{
 
       res.render('index.ejs',{items:results});
@@ -53,6 +54,16 @@ app.get('/index',(req,res)=>{
 
 app.get('/new',(req,res)=>{
   res.render('new.ejs');
+});
+
+app.post('/create',(req,res)=>{
+  
+  connection.query('insert into items (user_id,content) values(?,?)',
+    [req.session.userId,req.body.taskName],
+    (error,results)=>{
+      res.redirect('/index');
+    }
+  )
 });
 
 app.get('/signup',(req,res)=>{

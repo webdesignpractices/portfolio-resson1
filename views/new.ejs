@@ -8,16 +8,16 @@
   </head>
   <body>
     <header>
-      <a href="/" class="header-logo">LIST APP</a>
+       <%- include('header');%>
     </header>
     <div class="container">
       <div class="container-header">
-        <h1>買い物リスト作成</h1>
+        <h1>タスク作成</h1>
       </div>
       <div class="item-form-wrapper">
-        <p class="form-label">買うもの</p>
+        <p class="form-label">タスク</p>
         <form action="/create" method="post">
-          <input type="text" name="itemName" >
+          <input type="text" name="taskName" >
           <input type="submit" value="作成する">
         </form>
       </div>
