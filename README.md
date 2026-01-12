@@ -8,6 +8,9 @@ Node.js / Expressで作成したログイン機能付きタスク管理アプリ
 - Express
 - MySQL
 - mysql2
+
+## 環境
+- MySQL がローカルにインストールされていること
   
 ## 起動方法
 npm install
