@@ -26,6 +26,13 @@ app.use(
   })
 );
 
+const isAuthenticated=(req,res,next)=>{
+  if(req.session&&req.session.userId){
+    next();
+  }else{
+    res.redirect('/login');
+  }
+};
 app.use((req,res,next)=>{
   if(req.session.userId===undefined){
     res.locals.username='ゲスト';
@@ -41,6 +48,11 @@ app.get('/',(req,res)=>{
   res.render('top.ejs');
 });
 
+app.get('/logout',(req,res)=>{
+  req.session.destroy((error)=>{
+    res.redirect('/');
+  })
+});
 app.get('/index',(req,res)=>{
   connection.query('select * from items where user_id=?',
     [req.session.userId],
@@ -52,11 +64,11 @@ app.get('/index',(req,res)=>{
   
 });
 
-app.get('/new',(req,res)=>{
+app.get('/new',isAuthenticated,(req,res)=>{
   res.render('new.ejs');
 });
 
-app.post('/create',(req,res)=>{
+app.post('/create',isAuthenticated,(req,res)=>{
   
   connection.query('insert into items (user_id,content) values(?,?)',
     [req.session.userId,req.body.taskName],

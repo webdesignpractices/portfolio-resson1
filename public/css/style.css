@@ -212,7 +212,7 @@ header {
   border: 1px solid #f0f4f9;
   border-top: none;
   display: flex;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -398,7 +398,7 @@ a {
   border-color: #FF708F;
 }
 
-.article {
+/*.article {
   padding: 20px 0 0;
 }
 
@@ -428,7 +428,7 @@ a {
   font-style: normal;
   margin-bottom: 24px;
   margin-top: 0px;
-}
+}*/
 
 .article-login {
   text-align: center;
@@ -484,7 +484,7 @@ a {
   background-color: #2DC2BC;
 }
 
-.btn.sub {
+/*.btn.sub {
   background-color: #B7C7DF;
 }
 
@@ -568,7 +568,7 @@ a {
 
 .create-area .container > .btn {
   padding: 0 60px;
-}
+}*/
 
 .errors {
   font-size: 14px;
@@ -634,7 +634,7 @@ textarea {
   resize: vertical;
 }
 
-input[name="title"] {
+/*input[name="title"] {
   margin-bottom: 30px;
 }
 
@@ -666,7 +666,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #2DC2BC;
   cursor: pointer;
-}
+}*/
 
 header {
   background-color: #88E7CE;
@@ -748,7 +748,7 @@ header > p:after {
   font-size: 30px;
 }
 
-.list li, .list-admin li {
+/*.list li, .list-admin li {
   position: relative;
   padding: 28px 40px 54px;
   border: 1px solid #d5dee8;
@@ -855,7 +855,7 @@ header > p:after {
 
 .list-admin a:hover {
   opacity: 0.7;
-}
+}*/
 
 main {
   max-width: 700px;
@@ -1009,7 +1009,7 @@ main {
   transform: translateX(-50%);
 }
 
-input[type="submit"].btn-confirm {
+/*input[type="submit"].btn-confirm {
   width: auto;
   display: inline-flex;
   align-items: center;
